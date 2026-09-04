@@ -86,7 +86,7 @@ Add an entry to `CHANGELOG.md` for the new version, then:
 npm version patch   # or minor/major — commits, tags, and pushes (via postversion)
 ```
 
-Pushing the tag triggers [`.github/workflows/publish.yml`](.github/workflows/publish.yml), which publishes to npm and creates the matching GitHub release (using the `CHANGELOG.md` section for that version as the release notes). This requires an npm **Automation** access token stored as the `NPM_TOKEN` secret in the repo's GitHub Actions settings.
+Pushing the tag triggers [`.github/workflows/publish.yml`](.github/workflows/publish.yml), which publishes to npm and creates the matching GitHub release (using the `CHANGELOG.md` section for that version as the release notes). Publishing uses npm's [Trusted Publisher](https://docs.npmjs.com/trusted-publishers) (OIDC) — no npm token/secret needed. On [the package's npmjs.com settings](https://www.npmjs.com/package/create-polteq-bdd-ts/access), add a Trusted Publisher pointing at this GitHub repo and the `publish.yml` workflow file.
 
 Template files live in `templates/default/`. Two files get special handling at scaffold time:
 
