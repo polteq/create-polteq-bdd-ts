@@ -2,6 +2,20 @@
 
 Scaffolds a Polteq BDD TypeScript test project: [Playwright](https://playwright.dev) + [playwright-bdd](https://github.com/vitalets/playwright-bdd) (Cucumber-style Gherkin) with a page-object structure, preconfigured and ready to run.
 
+## Installation
+
+No install step is needed — `npm init` fetches and runs the latest published version ([`create-polteq-bdd-ts`](https://www.npmjs.com/package/create-polteq-bdd-ts)) on demand:
+
+```bash
+npm init polteq-bdd-ts@latest my-project
+```
+
+If you'd rather install the CLI explicitly first, `npx` works the same way:
+
+```bash
+npx create-polteq-bdd-ts@latest my-project
+```
+
 ## Usage
 
 ```bash
@@ -16,7 +30,7 @@ Or scaffold into the current directory:
 
 ```bash
 mkdir my-project && cd my-project
-npm init polteq-bdd@latest .
+npm init polteq-bdd-ts@latest .
 ```
 
 The target directory must be empty (or not yet exist). You'll be prompted for a project name, used as the `name` field in the generated `package.json`.
