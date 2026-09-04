@@ -78,12 +78,15 @@ my-project/
 
 Add `.feature` files under `features/`, add matching step definitions under `src/steps/`, and add page objects under `src/pages/` (extend `BasePage`). Wire new page objects into `src/fixtures/fixtures.ts` so they're injectable into steps.
 
-## Publishing changes to this scaffolder
+## Releasing
+
+Add an entry to `CHANGELOG.md` for the new version, then:
 
 ```bash
-npm version patch   # or minor/major
-npm publish --access public
+npm version patch   # or minor/major — commits, tags, and pushes (via postversion)
 ```
+
+Pushing the tag triggers [`.github/workflows/publish.yml`](.github/workflows/publish.yml), which publishes to npm and creates the matching GitHub release (using the `CHANGELOG.md` section for that version as the release notes). This requires an npm **Automation** access token stored as the `NPM_TOKEN` secret in the repo's GitHub Actions settings.
 
 Template files live in `templates/default/`. Two files get special handling at scaffold time:
 
