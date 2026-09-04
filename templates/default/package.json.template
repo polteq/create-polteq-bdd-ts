@@ -1,0 +1,23 @@
+{
+  "name": "__PROJECT_NAME__",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "bddgen": "npx bddgen",
+    "test": "npx bddgen && npx playwright test",
+    "test:smoke": "npx bddgen && npx playwright test --grep @smoke",
+    "test:mail": "npx bddgen && npx playwright test --grep @mail",
+    "report": "npx playwright show-report reports/playwright",
+    "install:browsers": "npx playwright install",
+    "watch:bdd": "nodemon -w ./features -w ./src/steps -e feature,ts --exec \"npx bddgen\"",
+    "watch:pw": "playwright test --ui",
+    "watch": "npm-run-all --parallel watch:*"
+  },
+  "devDependencies": {
+    "playwright-bdd": "^9.2.0",
+    "nodemon": "^3.1.14",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.0",
+    "typescript": "^6.0.3"
+  }
+}

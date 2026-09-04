@@ -1,0 +1,23 @@
+{
+  "author": "Marco Maes <marco.maes@polteq.com>",                                                                                                                   
+  "keywords": ["playwright", "bdd", "cucumber", "gherkin", "scaffold", "polteq", "typescript"],
+  "repository": {                                                                                                                                                  
+    "type": "git",                                                                                                                                                 
+    "url": "git+https://github.com/polteq/create-polteq-bdd-ts.git"
+  }, 
+  "name": "create-polteq-bdd-ts",
+  "version": "1.0.0",
+  "description": "Scaffold a Polteq BDD (Playwright + Cucumber) TypeScript test project.",
+  "type": "module",
+  "bin": {
+    "create-polteq-bdd": "bin/index.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
